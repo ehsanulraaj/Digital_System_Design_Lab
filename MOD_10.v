@@ -2,10 +2,10 @@ module MOD_10_Counter(Q, clk);
 input clk;
 output [3:0]Q;
 wire [3:0]Qb;
-wire clr, a;
+wire clr;
 reg J=1'b1, K=1'b1;
 
-nand(a, Q[1], Q[3]);
+  nand(clr, Q[1], Q[3]);
 
 JK F1(Q[0], Qb[0], J, K, clk, clr);
 JK F2(Q[1], Qb[1], J, K, Q[0], clr);
